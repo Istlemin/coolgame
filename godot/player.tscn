@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4osyda4k0voq"]
+
+[ext_resource type="Texture2D" uid="uid://cmlo2o53ibiv" path="res://art/cat.png" id="1_j22lc"]
+[ext_resource type="Script" path="res://player.gd" id="1_ud20c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fswlp"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ud20c")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Pivot"]
+pixel_size = 0.03
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_j22lc")
+hframes = 12
+vframes = 8
+frame = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fswlp")
